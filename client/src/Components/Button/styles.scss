@@ -1,0 +1,24 @@
+$disabled-base0: #ccc;
+$disabled-base1: #888;
+
+.btn-custom {
+  cursor: pointer;
+  padding: 0.4rem 0.7rem;
+  background: none;
+  border-radius: 5px;
+
+  &:disabled {
+    cursor: not-allowed;
+    background: $disabled-base0;
+    color: $disabled-base1;
+    border: $disabled-base0;
+    box-shadow: none;
+
+    &:hover,
+    &:active {
+      background: $disabled-base0;
+      color: $disabled-base1;
+      border: $disabled-base0;
+    }
+  }
+}

@@ -9,6 +9,7 @@
     "server": "nodemon app.js",
     "install-client": "npm i --prefix client",
     "install-both": "npm i && npm i --prefix client",
+    "build-client": "npm run build --prefix client",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server\" \"npm run client\""
   },

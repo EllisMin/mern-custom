@@ -1,0 +1,17 @@
+@import "../Shared/config";
+
+.main-header {
+  height: 55px;
+  background: $light-color;
+  border-bottom: 1px solid $border-color;
+  margin-bottom: 1rem;
+  &-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 55px;
+    margin: 0 auto;
+    max-width: $website-width;
+    padding: 0.6rem;
+  }
+}

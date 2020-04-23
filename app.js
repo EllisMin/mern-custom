@@ -1,10 +1,14 @@
 require("dotenv").config();
+const path = require("path");
 const express = require("express");
 const mongoose = require("mongoose");
 const { MONGODB_URI } = require("./config");
 
 const app = express();
 app.use(express.json());
+
+// Serves client/build statically
+app.use(express.static(path.join("client", "build")));
 
 // Set CORS header
 app.use((req, res, next) => {
@@ -13,6 +17,12 @@ app.use((req, res, next) => {
   // Allow client to set headers with Content-Type
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
   next();
+});
+
+// TODO: Register routes
+
+app.use((req, res, next) => {
+  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 });
 
 // Error Handler
